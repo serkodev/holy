@@ -1,3 +1,3 @@
 .PHONY: dev
 dev:
-	hugo server -D --themesDir=../.. --source=exampleSite --theme=holy
+	hugo server -D --disableFastRender --source=exampleSite --themesDir=../.. --theme=holy
