@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div>
+    {{ .Content }}
+    <ul id="posts">
+        {{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
+        <li>
+            <div class="my:16 py:26">
+                <a class="f:24 font:semibold" href="{{ .Permalink }}">
+                    <div>{{ .Title }}</div>
+                    <div class="font:16 mt:5 f:gray"><time>{{ .Date | time.Format (":date_medium") }}</time></div>
+                </a>
+            </div>
+        </li>
+        {{- end }}
+    </ul>
+</div>
+{{ end }}

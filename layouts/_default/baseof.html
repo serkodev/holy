@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+{{- partial "head.html" . -}}
+
+<body>
+    <nav class="w:full h:90 fixed bg:white">
+        <div class="
+            h:full
+            w:full
+            max-w:1280
+            mx:auto
+            px:16
+            d:flex
+            align-items:center
+        ">
+            <div class="mr:8">
+                <a class="mr-3 font:extralight">Holy</a>
+            </div>
+            {{ $navBtn := `font:semibold px:8` }}
+            <a class="{{ $navBtn }}">Home</a>
+            <a class="{{ $navBtn }}">About</a>
         </div>
-        {{- partial "footer.html" . -}}
-    </body>
+    </nav>
+
+    <div class="pt:90 px:16 max-w:1280 mx:auto">
+        {{- block "main" . }}{{- end }}
+    </div>
+    {{- partial "footer.html" . -}}
+</body>
+
 </html>
