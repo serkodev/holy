@@ -1,24 +1,17 @@
 {{ define "main" }}
 <article class="py:42 mx:auto max-w:704px">
-    <header class="mb:64">
-        <span class="f:32 font:semibold">{{ .Title }}</span>
-        <div>
+    <header class="mb:2em">
+        <div class="font:40 font:extrabold">{{ .Title }}</div>
+        <div class="mt:.8em font:gray">
             {{- if isset .Params "date" -}}
             {{ if eq .Lastmod .Date }}
-            <time>{{ .Date | time.Format (i18n "post.created") }}</time>
+            <time>{{ .Date | time.Format (":date_medium") }}</time>
             {{ else }}
-            <time>{{ .Lastmod | time.Format (i18n "post.updated") }}</time>
+            <time>{{ .Lastmod | time.Format (":date_medium") }}</time>
             {{ end }}
             {{- end -}}
         </div>
     </header>
-
-    {{/* <div class="bg:red p:10>:where(h1,h2)">
-        <div class="hi">123
-            <div class="hi">456</div>
-        </div>
-    </div> */}}
-
 
     {{/* <div class="
         my:16>p
@@ -53,12 +46,17 @@
     font:gray-78_:where(th)
     font:gray-12_:where(th)@dark
     font:extrabold_:where(h1)
+    
     p:20_:where(pre)
     r:8_:where(pre)
+    bg:gray-3_:where(pre,code:not(.highlight_*))
+    p:2;4_:where(code:not(.highlight_*))
+    r:4_:where(code:not(.highlight_*))
+
     pl:1.5em_:where(ul,ol,blockquote)
     pl:.375em_:where(li)
     mt:.5em_:where(h1,h2,h3)+:where(h1,h2,h3)
-    my:1.125em_:where(p,pre,blockquote,figure,ul,ol)
+    my:1.125em_:where(p,pre,blockquote,figure,ul,ol,table)
     mt:2em_:where(h1,h2,h3,h4,h5,h6)
     list-style-type:disc_:where(ul)
     font:fade-76_:where(p,li)
@@ -93,3 +91,4 @@
             {{- .Content -}}
         </div>
 </article>
+{{ end }}
