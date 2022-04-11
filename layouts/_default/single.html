@@ -1,8 +1,8 @@
 {{ define "main" }}
-<article class="py:42 mx:auto max-w:704px">
-    <header class="mb:2em">
+<article class="py:48 w:full">
+    <header class="mb:32">
         <div class="font:40 font:extrabold">{{ .Title }}</div>
-        <div class="mt:.8em font:gray">
+        <div class="mt:16 font:gray">
             {{- if isset .Params "date" -}}
             {{ if eq .Lastmod .Date }}
             <time>{{ .Date | time.Format (":date_medium") }}</time>
@@ -13,17 +13,7 @@
         </div>
     </header>
 
-    {{/* <div class="
-        my:16>p
-        mt:0>p+p
-        mt:32>:where(h1,h2,h3,h4,h5,h6)
-
-        my:16>blockquote
-        border-left:2px>blockquote
-        pl:16>blockquote_p
-    "> */}}
-
-        <div class="
+    <div class="
         _:where(a):hover{text-decoration-color:blue-36!}
         _:where(a){text-decoration:2;underline;fade-23;_text-decoration-color:fade-68@dark}
         _:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
@@ -59,7 +49,7 @@
         _:where(video,img){max-width:full}
         _:where(a,mark){text-underline-offset:3}
     ">
-            {{- .Content -}}
-        </div>
+        {{- .Content -}}
+    </div>
 </article>
 {{ end }}
