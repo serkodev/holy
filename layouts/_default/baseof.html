@@ -14,11 +14,29 @@
             align-items:center
         ">
             <div class="mr:8">
-                <a class="mr-3 font:extralight">Holy</a>
+                <a href="/" class="mr-3 font:extralight">Holy</a>
             </div>
-            {{ $navBtn := `font:semibold px:8` }}
-            <a class="{{ $navBtn }}">Home</a>
-            <a class="{{ $navBtn }}">About</a>
+
+            <div>
+                {{ $currentPage := . }}
+                {{ $active := "" }}
+
+                {{ range .Site.Menus.main }}
+                {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+                {{ $active = "active" }}
+                {{ end }}
+                <a class="
+                    font:semibold
+                    font:gray-80
+                    font:gray-60:hover
+                    font:gray-40.active
+                    px:8
+                    {{ $active }}
+                " href="{{ .URL }}" title="{{ .Title }}">
+                    {{ .Name }}
+                </a>
+                {{ end }}
+            </div>
         </div>
     </nav>
 
