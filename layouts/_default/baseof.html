@@ -2,22 +2,22 @@
 <html>
 {{- partial "head.html" . -}}
 
-<body class="bg:gray-90@dark font:gray-15@dark">
-    <nav class="w:full h:90 fixed bg:gray-88@dark bg:white z:1000">
+<body class="bg:fade-90@dark font:fade-15@dark">
+    <nav class="w:full h:90 fixed bg:fade-90/.95@dark bg:white z:1000">
         <div class="
             h:full
             w:full
-            max-w:1280
+            max-w:1200
             mx:auto
-            px:16
+            px:32
             d:flex
             align-items:center
         ">
-            <div class="mr:8">
+            <div>
                 <a href="/" class="mr-3 font:extralight">Holy</a>
             </div>
 
-            <div>
+            <div class="ml:auto">
                 {{ $currentPage := . }}
                 {{ $active := "" }}
 
@@ -27,10 +27,11 @@
                 {{ end }}
                 <a class="
                     font:semibold
-                    font:gray-80
-                    font:gray-60:hover
-                    font:gray-40.active
+                    font:fade-70
+                    font:fade-10:hover
+                    font:fade-30.active
                     px:8
+                    transition:150ms;ease-in
                     {{ $active }}
                 " href="{{ .URL }}" title="{{ .Title }}">
                     {{ .Name }}
@@ -40,10 +41,10 @@
         </div>
     </nav>
 
-    <div class="pt:90 px:16 max-w:700 box:content-box mx:auto">
+    <div class="pt:90 px:32 max-w:700 box:content-box mx:auto">
         {{- block "main" . }}{{- end }}
+        {{- partial "footer.html" . -}}
     </div>
-    {{- partial "footer.html" . -}}
 </body>
 
 </html>
