@@ -20,7 +20,6 @@
             <div class="ml:auto">
                 {{ $currentPage := . }}
                 {{ $active := "" }}
-
                 {{ range .Site.Menus.main }}
                 {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
                 {{ $active = "active" }}
@@ -34,7 +33,7 @@
                     transition:150ms;ease-in
                     {{ $active }}
                 " href="{{ .URL }}" title="{{ .Title }}">
-                    {{ .Name }}
+                    {{- .Name -}}
                 </a>
                 {{ end }}
             </div>
