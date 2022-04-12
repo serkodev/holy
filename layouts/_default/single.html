@@ -12,43 +12,6 @@
             {{- end -}}
         </div>
     </header>
-    <div class="
-        _:where(a):hover{text-decoration-color:fade!}
-        _:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
-        _:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
-        _:where(code){font:90%;_v:middle}
-        _:where(code:not(.highlight_*)){p:2;4;_r:4}
-        _:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
-        _:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:gray-57@dark}
-        _:where(h1){font:40;_font:extrabold}
-        _:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
-        _:where(h1,h2,h3,h4,h5,h6){mt:2em}
-        _:where(h2){mb:1em;_font:32}
-        _:where(h3){font:24}
-        _:where(h4){font:20}
-        _:where(h5){font:16}
-        _:where(h6){font:14}
-        _:where(li)::marker{font:fade-45;_font:gray-68@dark}
-        _:where(li){pl:.375em}
-        _:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
-        _:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:gray-34@dark}
-        _:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
-        _:where(pre){p:20;_r:8;_overflow:auto}
-        _:where(pre,code:not(.highlight_*)){bg:fade-3;_bg:fade-93@dark}
-        _:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
-        _:where(table){width:full;_border-spacing:0}
-        _:where(td){v:baseline}
-        _:where(td,th):first-child{pl:0}
-        _:where(td,th):last-child{pr:0}
-        _:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:gray-4/.04@dark}
-        _:where(th){font:gray-78;_font:14;_text:left;_font:gray-12@dark}
-        _:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
-        _:where(ul){list-style-type:disc}
-        _:where(ul,ol,blockquote){pl:1.5em}
-        _:where(video,img){max-width:full}
-        _:where(a,mark){text-underline-offset:3}
-    ">
-        {{- .Content -}}
-    </div>
+    {{- partial "prose.html" . -}}
 </article>
 {{ end }}

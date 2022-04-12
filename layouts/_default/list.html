@@ -1,3 +1,22 @@
 {{ define "main" }}
-
+<div>
+    <article class="box:border-box pt:64 w:full">
+        <header class="mb:32">
+            <div class="font:40 font:extrabold">{{ .Title }}</div>
+        </header>
+        {{- partial "prose.html" . -}}
+    </article>
+    <ul>
+        {{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
+        <li>
+            <div class="mb:16 py:24 f:fade-30 f:fade-10:hover transition:150ms;ease-in">
+                <a class="f:24 font:semibold" href="{{ .Permalink }}">
+                    <div>{{ .Title }}</div>
+                </a>
+                <div class="mt:12 f:fade-70"><time>{{ .Date | time.Format (":date_medium") }}</time></div>
+            </div>
+        </li>
+        {{- end }}
+    </ul>
+</div>
 {{ end }}
