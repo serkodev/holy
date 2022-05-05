@@ -2,7 +2,7 @@
 <article class="box:border-box py:64 w:full">
     <header class="mb:32">
         <div class="font:40 font:extrabold">{{ .Title }}</div>
-        <div class="mt:16 font:fade-70">
+        <div class="mt:16 f:fade-64">
             {{- if isset .Params "date" -}}
             {{ if eq .Lastmod .Date }}
             <time>{{ .Date | time.Format (":date_medium") }}</time>
