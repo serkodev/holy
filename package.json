@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "hugo server -D --disableFastRender --source=exampleSite --themesDir=../.. --theme=holy"
+    "dev": "hugo server -D --disableFastRender --source=exampleSite --themesDir=../.. --theme=holy",
+    "build": "hugo --source=exampleSite --themesDir=../.. --theme=holy"
   },
   "repository": {
     "type": "git",
