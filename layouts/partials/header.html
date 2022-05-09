@@ -1,0 +1,36 @@
+<nav class="w:full h:90 fixed bg:fade-90/.95@dark bg:white z:1000">
+    <div class="
+        h:full
+        w:full
+        max-w:1200
+        mx:auto
+        px:32
+        d:flex
+        align-items:center
+    ">
+        <div>
+            <a href="/" class="mr-3 font:extralight">{{ .Site.Title }}</a>
+        </div>
+
+        <div class="ml:auto">
+            {{ $currentPage := . }}
+            {{ $active := "" }}
+            {{ range .Site.Menus.main }}
+            {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+            {{ $active = "active" }}
+            {{ end }}
+            <a class="
+                font:semibold
+                font:fade-70
+                font:fade-10:hover
+                font:fade-30.active
+                px:8
+                transition:150ms;ease-in
+                {{ $active }}
+            " href="{{ .URL }}" title="{{ .Title }}">
+                {{- .Name -}}
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</nav>
