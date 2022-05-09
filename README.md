@@ -2,6 +2,8 @@
 
 A simple and clean Hugo theme.
 
+[Live Demo](https://hugo-holy.pages.dev/)
+
 ## Features
 
 - Homepage with list of posts.
