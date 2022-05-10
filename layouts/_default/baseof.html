@@ -4,9 +4,9 @@
 
 <body class="bg:fade-84@dark font:fade-16@dark">
     {{ partial "header.html" . -}}
-    <div class="d:flex flex:column@<=sm pt:90 px:32 jc:center gap:44">
+    <div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44">
         {{- block "side" . }}{{- end }}
-        <div class="max-w:700 w:700 box:content-box">
+        <div class="max-w:700 w:full box:content-box">
             {{- block "main" . }}{{- end }}
             {{- partial "footer.html" . -}}
         </div>
