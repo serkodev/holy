@@ -2,7 +2,7 @@
 <article class="box:border-box pt:32">
     <header class="mb:32">
         <div class="font:40 font:extrabold">{{ .Title }}</div>
-        <div class="mt:16 f:fade-64">
+        <div class="mt:16 f:fade-60">
             {{- if isset .Params "date" -}}
             {{ if eq .Lastmod .Date }}
             <time>{{ .Date | time.Format (":date_medium") }}</time>
