@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/@master/styles@1.13.0"></script>
     <script src="https://unpkg.com/master-styles-group"></script>
     <script src="https://unpkg.com/themes.js"></script>
-    <script>new window.Themes()</script>
+    <script>window.themes = window.themes || new window.Themes()</script>
 
     {{- partial "head-extra.html" . -}}
 </head>
