@@ -9,7 +9,13 @@
         align-items:center
     ">
         <div>
-            <a href="/" class="mr-3 font:extralight">{{ .Site.Title }}</a>
+            <a href="/" class="mr-3 font:extralight">
+              {{ if not .Site.Params.HeaderTitle }}
+              {{ .Site.Title }}
+              {{ else }}
+              {{ .Site.Params.HeaderTitle }}
+              {{ end }}
+            </a>
         </div>
 
         <div class="ml:auto">
